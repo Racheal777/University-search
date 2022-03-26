@@ -33,13 +33,13 @@ async function school() {
       tables.classList.add("names");
 
       tables.innerHTML = `
-           <tbody>
-           <tr>
-                <td class="name">${element.name}</td>
+      <tbody>
+      <tr>
+           <td class="namez">${element.name}</td>
 
-                <td> <a href="${element.web_pages}" target = "_blank">${element.web_pages}</a></td>     
-            </tr> 
-        </tbody>    
+           <td class = "link"> <a href="${element.web_pages}" target = "_blank">${element.web_pages}</a></td>     
+       </tr> 
+   </tbody>   
     `;
       
       table.appendChild(tables);
@@ -63,14 +63,21 @@ async function school() {
     table.textContent = ''
     //filter the school array
     //check if the input is in any of the name
-    const filteredArray = data.filter((arr) => {
+    let filterData = [...new Set(data)]
+    console.log(filterData);
+
+
+    const filteredArray = data.filter((arr, i) => {
+        
       // console.log(arr.name.includes(val))
-      return arr.name.includes(val);
+      return arr.name.includes(val)
+       
     });
 
     let existedName = filteredArray;
     //displaying each of the data
     console.log(existedName);
+    console.log(filteredArray);
 
     const heading = document.createElement('div')
 
@@ -90,7 +97,7 @@ async function school() {
     </div>
 
     `
-    table.appendChild(heading)
+     table.appendChild(heading)
     existedName.forEach((list) => {
         
     //   const searchInput = document.createElement("table");
@@ -106,9 +113,9 @@ async function school() {
         
         <tbody>
            <tr>
-                <td class="name">${list.name}</td>
+                <td class="namez">${list.name}</td>
 
-                <td> <a href="${list.web_pages}" target = "_blank">${list.web_pages}</a></td>     
+                <td class = "link"> <a href="${list.web_pages}" target = "_blank">${list.web_pages}</a></td>     
             </tr> 
         </tbody>   
     `;
@@ -117,13 +124,13 @@ async function school() {
       // table.innerHTML = ''
 
       table.appendChild(tables);
-
+      search.value = ''
       // table.replaceWith(searchInput)
 
     //   table.textContent = "";
-      console.log(table);
-      console.log(tables);
-
+    //   console.log(table);
+    //   console.log(tables);
+        
       // if(val)
       // table.appendChild(searchInput)
     });

@@ -6,7 +6,7 @@
 }
 table{
     width: 100%;
-    font-size: 1.4em;
+    font-size: 1.2em;
     border-collapse: collapse;
     /* margin: 1em auto; */
     
@@ -28,6 +28,10 @@ table{
 }
 
 .name{
+    width: 60%;
+}
+
+.namez{
     width: 60%;
 }
 .head{
@@ -123,11 +127,21 @@ header{
 @media screen and (max-width : 600px) {
 
 
+    form{
+        /* display: flex;
+        justify-content: center; */
+        width: 70%;
+        margin: auto 7em 0px;
+    }
+input{
+    width: 80%;
+    margin-right: 10px;
+}
 
 
 table{
     width: 100%;
-    font-size: 1.4em;
+    font-size: 1em;
     border-collapse: collapse;
     /* margin: 1em auto; */
     
@@ -136,25 +150,33 @@ table{
 .tabless{
     width: 100%;
     /* font-size: 1.4em; */
+    border-right: none;
+    border: none;
     border-collapse: collapse; 
 }
 
-
-
+/* .namez{
+    width: 50%;
+    
+    background-color: #358585;
+} */
+/* .link a{
+    width: 50%;
+} */
 .name{
-    width: 36%;
+    width: 50%;
 }
 
 tr td .name{
-    width: 30%;
+    width: 50%;
 }
 
-form{
+/* form{
     
     padding: 1.3em 4px;
     margin: auto 14em 0px ;
 
-}
+} */
 
 
 caption{
