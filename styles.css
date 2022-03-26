@@ -1,0 +1,168 @@
+
+
+.text h1{
+    text-align: center;
+    color: rgb(4, 89, 100);
+}
+table{
+    width: 100%;
+    font-size: 1.4em;
+    border-collapse: collapse;
+    /* margin: 1em auto; */
+    
+}
+
+.tabless{
+    margin: 2em auto 10px;
+    width: 100%;
+    /* font-size: 1.4em; */
+    border-collapse: collapse; 
+}
+
+.tabless th{
+    padding: 10px 15px;
+    border: 1px solid black;
+    background-color: rgb(4, 138, 138);
+    color: white;
+      
+}
+
+.name{
+    width: 60%;
+}
+.head{
+    padding: 10px 15px;
+    border: 1px solid black;
+    background-color: rgb(4, 138, 138);
+    color: white;
+    
+}
+table th{
+    padding: 10px 15px;
+    border: 1px solid black;
+    background-color: rgb(4, 138, 138);
+    color: white;
+    
+}
+
+tr td a{
+    text-decoration: none;
+   
+    color: rgb(5, 18, 209);
+    
+}
+.tabless tr:hover{
+    background-color: rgb(212, 242, 247);
+    }
+
+th, td{
+    text-align: center;
+    padding: 16px 5px;
+    border: 1px solid black;
+
+}
+
+
+table tr:hover{
+background-color: rgb(212, 242, 247);
+}
+
+form{
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+    /* margin: 3em auto; */
+   
+    padding: 1.3em 4px;
+    margin: auto 43em 0px ;
+
+}
+
+input{
+    padding: 15px;
+    /* background-color: aqua; */
+    border:#1c4545 ;
+    border-radius: 5px;
+    width: 70%;
+    
+    color: #ffffff;
+    align-items: center;
+    background: #3e9c9c;
+    box-shadow:  1px 2px 2px #358585,
+                 -2px -2px 3px #c9cfcf;
+
+    
+}
+
+input::placeholder{
+    color: white;
+    
+}
+
+input:focus{
+    outline: none;
+    border: none;
+}
+caption{
+    padding: 0.6em;
+    font-size: 2em;
+    font-family: cursive;
+    color: rgb(3, 48, 49);
+    font-weight: bold;
+}
+
+header{
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+                 -20px -20px 60px #ffffff;
+    /* width: 100%; */
+    min-height: 10vh;
+    
+}
+
+@media screen and (max-width : 600px) {
+
+
+
+
+table{
+    width: 100%;
+    font-size: 1.4em;
+    border-collapse: collapse;
+    /* margin: 1em auto; */
+    
+}
+
+.tabless{
+    width: 100%;
+    /* font-size: 1.4em; */
+    border-collapse: collapse; 
+}
+
+
+
+.name{
+    width: 36%;
+}
+
+tr td .name{
+    width: 30%;
+}
+
+form{
+    
+    padding: 1.3em 4px;
+    margin: auto 14em 0px ;
+
+}
+
+
+caption{
+    padding: 0.6em;
+    font-size: 1.2em;
+    
+}
+
+
+
+}
