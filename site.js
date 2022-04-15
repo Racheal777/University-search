@@ -24,6 +24,8 @@ async function school() {
     method: "GET",
     mode: 'cors',
     origin: 'http://universities.hipolabs.com/search?country=United+States',
+    Headers: "Access-Control-Allow-Origin"  ,
+    
     // headers: {
     //   "Access-Control-Allow-Origin" : "*",
      
