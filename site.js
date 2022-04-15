@@ -11,6 +11,7 @@ const table = document.querySelector(".table");
 const searched = document.querySelector(".tabless");
 
 
+
 let data = []
 let tables = []
 let heading = []
@@ -22,14 +23,14 @@ async function school() {
   const response = await fetch(uni, {
     method: "GET",
     mode: 'cors',
+    origin: 'http://universities.hipolabs.com/search?country=United+States',
     // headers: {
     //   "Access-Control-Allow-Origin" : "*",
-    //   "Access-Control-Allow-Methods": "GET, POST, OPTIONS, HEAD",
+     
     //   'Access-Control-Allow-Headers':'http://universities.hipolabs.com/search?country=United+States',
-    //   "Access-Control-Allow-Headers" :"Authorization, Origin, X-Requested-With, Content-Type, Accept",
       
     // },
-    proxy_pass: "http://127.0.0.1:8000"
+    // proxy_pass: "http://127.0.0.1:8000"
     
     
   });
