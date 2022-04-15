@@ -1,7 +1,7 @@
 
 //fetch api
 
-
+// const all = "http://universities.hipolabs.com/search?name"
 const uni = "http://universities.hipolabs.com/search?country=United+States"
 
 
@@ -13,17 +13,31 @@ const searched = document.querySelector(".tabless");
 
 let data = []
 let tables = []
+let heading = []
 
 //hoisting
 school();
 //fetching data
 async function school() {
-  const response = await fetch(uni);
+  const response = await fetch(uni, {
+    method: "GET",
+    mode: 'cors',
+    // headers: {
+    //   "Access-Control-Allow-Origin" : "*",
+    //   "Access-Control-Allow-Methods": "GET, POST, OPTIONS, HEAD",
+    //   'Access-Control-Allow-Headers':'http://universities.hipolabs.com/search?country=United+States',
+    //   "Access-Control-Allow-Headers" :"Authorization, Origin, X-Requested-With, Content-Type, Accept",
+      
+    // },
+    proxy_pass: "http://127.0.0.1:8000"
+    
+    
+  });
 
   data = await response.json();
   console.log(data);
 
-  if (data) {
+   if (data) {
     // console.log(data.slice(1,21))
     let school = data;
 
@@ -44,7 +58,7 @@ async function school() {
       
       table.appendChild(tables);
     });
-  }
+  } 
 
   console.log(tables)
   //grabbing the table
@@ -63,23 +77,43 @@ async function school() {
     table.textContent = ''
     //filter the school array
     //check if the input is in any of the name
-    let filterData = [...new Set(data)]
-    console.log(filterData);
+    // let filterData = [...new Set(data)]
+    // console.log(filterData);
+    let filteredArray = []
 
-
-    const filteredArray = data.filter((arr, i) => {
+    filteredArray = data.filter(( arr, i ) => {
+      
         
-      // console.log(arr.name.includes(val))
-      return arr.name.includes(val)
+         if(arr.name.includes(val) ){
+          return arr.name
+
+         }
+
+
+        //  console.log(  'school not found')
+        //   // console.log( check[0])
+        //  const errortable = document.createElement('div')
+        //  errortable.classList.add('error')
+        //  errortable.innerHTML = 
+         
+        //  `
+        //  <h1>School not found </h1>
+        //  <h3>Search again</h3>
+        //  `
+
+        // table.appendChild(errortable)
+        
+       
+      
        
     });
 
-    let existedName = filteredArray;
+    
     //displaying each of the data
-    console.log(existedName);
-    console.log(filteredArray);
+    
+    console.log(filteredArray)
 
-    const heading = document.createElement('div')
+    heading = document.createElement('div')
 
     //this is heading, appending it to table because table is now empty
     heading.innerHTML = `
@@ -98,15 +132,8 @@ async function school() {
 
     `
      table.appendChild(heading)
-    existedName.forEach((list) => {
+    filteredArray.forEach((list) => {
         
-    //   const searchInput = document.createElement("table");
-    //   searchInput.classList.add("names");
-      // const name = document.createElement('th')
-      // console.log(searchInput.innerHTML = `${list.name}`)
-
-      // table.innerHTML = ""
-      
       tables = document.createElement("table");
       tables.classList.add("names");
       tables.innerHTML = `
@@ -125,14 +152,7 @@ async function school() {
 
       table.appendChild(tables);
       search.value = ''
-      // table.replaceWith(searchInput)
-
-    //   table.textContent = "";
-    //   console.log(table);
-    //   console.log(tables);
-        
-      // if(val)
-      // table.appendChild(searchInput)
+      
     });
   });
 }
